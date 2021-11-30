@@ -3,6 +3,8 @@ title: "lab10"
 author: "Narjes Mathlouthi"
 date: "11/30/2021"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -62,8 +64,30 @@ say("hello world",
 
 Convert to a git `usethis` package 
 ```{r}
-#Convert 
+#Convert to git and github repo
 #usethis::use_git()
 #usethis::use_github()
 ```
+
+## paletteer to access thousands of colors palettes
+
+```{r}
+storms %>% 
+  group_by(name) %>% 
+  summarize(min_pressure = min(pressure, na.rm = TRUE)) %>% 
+  #find the 10 storm with the lowest minimum storm
+  slice_min(n = 10, min_pressure) %>% 
+  ggplot(aes(x = min_pressure, y = name)) +
+  
+  geom_col(aes(fill = name)) +
+#View(palettes_d_names)
+  scale_fill_paletteer_d("ggsci::cyan_material")
+
+```
+
+
+```{r}
+
+```
+
 
