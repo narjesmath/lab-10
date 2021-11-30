@@ -60,7 +60,7 @@ say("hello world",
  by_color = c("rainbow", "rainbow"))
 ```
 
-Convert to a git repo
+Convert to a git `usethis` package 
 ```{r}
 #Convert 
 #usethis::use_git()
