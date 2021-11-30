@@ -84,10 +84,32 @@ storms %>%
   scale_fill_paletteer_d("ggsci::cyan_material")
 
 ```
-
+## One spatial data example
 
 ```{r}
+vegetation <- read_sf("doc.kml") %>% 
+  select(Name) %>% 
+  janitor::clean_names()
+
+
+#create  a map 
+ggplot(data= vegetation) +
+  geom_sf(aes(fill = name), color = NA) + 
+  theme_minimal() +
+  scale_fill_paletteer_d("ggthemes::manyeys") +
+  labs(title = "Jordana Basin LTER Vegetation", 
+       caption = "Soursce : Jordana LTER")
+  
+
+#Update theme to be theme minimal
+#Fill color change based on vegetation
+#color of line to NA (color = NA) outside of aes because it's not a var
+
 
 ```
 
+```{r}
+# the default is to save the last plot
+ggsave(filename = "my_awesome_map.jpg", width = 8, height = 5, bg = "black")
+```
 
