@@ -1,0 +1,69 @@
+---
+title: "lab10"
+author: "Narjes Mathlouthi"
+date: "11/30/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(beepr)
+library(praise)
+library(cowsay)
+library(paletteer)
+library(tidyverse)
+library(janitor)
+library(usethis)
+library(sf)
+library(jsonlite)
+library(multicolor)
+```
+
+##  beepr beeps
+
+Use the function `beep()` in the beeper package to make an audio 
+
+
+```{r}
+
+#beep()
+#beep(8)
+
+```
+
+Vector of values that our `for` loop will iterate over
+rev(seq (1:99))
+
+```{r, eval = FALSE}
+for ( i in rev(seq(1:9999))) {
+  print(paste(i," bottle of beer on the wall"))
+}
+#beep(4)
+```
+
+## praise and cowsay
+Packages built with a single purpose: to be kind and fun
+
+```{r}
+praise("${Exclamation}, ${EXCLAMATION}!!!!")
+
+praise("Holy ${creating}, Batman - this code is ${ADJECTIVE}!")
+```
+
+USE cowsay::say()to make a character say something to you
+
+```{r}
+say("hello world",
+   by = "hypnotoad",
+   what_color = c("royalblue1", "tomato2"),
+ by_color = c("rainbow", "rainbow"))
+```
+
+Convert to a git repo
+```{r}
+#Convert 
+#usethis::use_git()
+#usethis::use_github()
+```
+
